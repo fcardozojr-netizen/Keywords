@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keyword Master | Odonto Master</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div id="login-screen" class="login-wrap">
+  <div class="login-card">
+    <div class="brand-mark">OM</div><p class="eyebrow">ODONTO MASTER</p>
+    <h1>Keyword <span>Master</span></h1><p class="muted">Inteligência de palavras-chave para campanhas de alta performance.</p>
+    <form id="login-form"><label>Senha de administrador</label><input id="password" type="password" placeholder="Digite sua senha" required><button class="primary full">Acessar plataforma</button><p id="login-error" class="error"></p></form>
+    <small>Acesso privado • Uso administrativo</small>
+  </div>
+</div>
+<div id="app" class="hidden">
+  <aside class="sidebar">
+    <div class="side-brand"><div class="brand-mark small">OM</div><div><b>ODONTO MASTER</b><span>KEYWORD INTELLIGENCE</span></div></div>
+    <div class="nav-label">WORKSPACE</div><a class="nav-item active">▦ <span>Planejador</span></a><a class="nav-item" href="#results">⌕ <span>Resultados</span></a>
+    <div class="sidebar-bottom"><div class="status-dot"></div><span>Ambiente privado</span><button id="logout" class="logout">Sair</button></div>
+  </aside>
+  <main class="main">
+    <header><div><p class="eyebrow">CENTRAL DE INTELIGÊNCIA</p><h1>Planejador de palavras-chave</h1><p class="muted">Descubra oportunidades de busca para os produtos e serviços da Odonto Master.</p></div><div class="profile"><div class="avatar">OM</div><div><b>Administrador</b><small>Conta pessoal</small></div></div></header>
+    <section class="stats">
+      <div class="stat"><span>PALAVRAS ENCONTRADAS</span><strong id="stat-total">—</strong><small>Na pesquisa atual</small></div>
+      <div class="stat"><span>VOLUME TOTAL MENSAL</span><strong id="stat-volume">—</strong><small>Estimativa agregada</small></div>
+      <div class="stat"><span>BAIXA CONCORRÊNCIA</span><strong id="stat-low">—</strong><small>Oportunidades identificadas</small></div>
+      <div class="stat"><span>CPC MÉDIO</span><strong id="stat-cpc">—</strong><small>Em reais, quando disponível</small></div>
+    </section>
+    <section class="panel generator">
+      <div class="panel-head"><div><span class="step">01 / CONFIGURAÇÃO</span><h2>Encontre novas keywords</h2><p class="muted">Informe termos iniciais, uma página ou combine as duas fontes.</p></div><span class="api-pill"><i></i> GOOGLE ADS API</span></div>
+      <div class="form-grid">
+        <div class="field wide"><label>Palavras-chave iniciais</label><textarea id="seeds" rows="3" placeholder="Ex.: materiais odontológicos&#10;equipamentos para dentistas&#10;curso de implantodontia"></textarea><small>Uma por linha. Até 20 termos por consulta.</small></div>
+        <div class="field wide"><label>URL do site ou página (opcional)</label><input id="url" type="url" placeholder="https://odontomaster.com.br"></div>
+        <div class="field"><label>Localização</label><select id="location"><option value="2076">Brasil</option></select><small>Segmentação nacional. Podemos incluir estados e cidades após validar os IDs oficiais.</small></div>
+        <div class="field"><label>Idioma</label><select id="language"><option value="1014">Português</option><option value="1000">Inglês</option></select></div>
+        <div class="field"><label>Quantidade de resultados</label><select id="limit"><option>100</option><option>200</option><option>300</option><option>500</option></select></div>
+        <div class="field"><label>Rede de pesquisa</label><input value="Google Search" disabled></div>
+      </div>
+      <div class="actions"><label class="check"><input id="cpc" type="checkbox" checked> Incluir CPC médio</label><button id="generate" class="primary">✦ Gerar palavras-chave</button></div>
+      <p id="message" class="message"></p>
+    </section>
+    <section id="results" class="panel results-panel">
+      <div class="panel-head"><div><span class="step">02 / INTELIGÊNCIA</span><h2>Resultados da pesquisa</h2><p class="muted">Métricas históricas retornadas pelo Google Ads.</p></div><div class="result-actions"><button id="analyze" class="secondary" disabled>✧ Agrupar e analisar</button><button id="export" class="secondary" disabled>↓ Exportar CSV</button></div></div>
+      <div class="filters"><input id="filter" placeholder="⌕  Filtrar palavras-chave..."><select id="competition-filter"><option value="">Toda concorrência</option><option>LOW</option><option>MEDIUM</option><option>HIGH</option></select><select id="sort"><option value="volume">Maior volume</option><option value="cpc">Maior CPC</option><option value="alpha">Ordem alfabética</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>PALAVRA-CHAVE</th><th>BUSCAS / MÊS</th><th>CONCORRÊNCIA</th><th>ÍNDICE</th><th>CPC MÉDIO</th><th>LANCE TOPO (BAIXO–ALTO)</th></tr></thead><tbody id="table-body"><tr><td colspan="6" class="empty">Faça uma pesquisa para visualizar as oportunidades.</td></tr></tbody></table></div>
+      <div class="table-foot"><span id="row-count">Nenhum resultado</span><span>Dados sujeitos à disponibilidade da API e à segmentação escolhida.</span></div>
+    </section>
+    <section id="analysis-panel" class="panel hidden"><div class="panel-head"><div><span class="step">03 / ORGANIZAÇÃO</span><h2>Estrutura sugerida</h2></div></div><div id="analysis-content" class="analysis-grid"></div></section>
+    <footer>KEYWORD MASTER <span>•</span> ODONTO MASTER <span>•</span> Plataforma privada</footer>
+  </main>
+</div>
+<script src="/static/app.js"></script>
+</body></html>
